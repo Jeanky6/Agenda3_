@@ -8,7 +8,7 @@ module.exports = {
       await queryInterface.addColumn(USER_TABLE, 'area_id',{
         type: Sequelize.DataTypes.INTEGER,
         references:{
-          model: 'area',
+          model: 'areas',
           key: 'id'
         },
       })

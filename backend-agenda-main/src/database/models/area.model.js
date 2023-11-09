@@ -29,6 +29,7 @@ const AreaSchema = {
 
 class Area extends Model{
     static associate(models){
+        this.hasMany(models.User,{as: 'users'})
 
     }
     static config(sequelize){

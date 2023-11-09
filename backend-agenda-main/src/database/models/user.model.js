@@ -2,6 +2,8 @@ const { DataTypes, Model } = require ('sequelize')
 
 const USER_TABLE = 'users'
 
+
+
 const UserSchema = {
     id:{
         type:DataTypes.INTEGER,
@@ -37,9 +39,12 @@ const UserSchema = {
 
 class User extends Model{
     static associate(models){
-        this. belongsTo(models.Area,{as: 'area', foreignKey: 'areaId'})
-
+        this.belongsTo(models.Area,{as: 'areas', foreignKey: 'areaId'})
     }
+    // static associate(models){
+    //     this.belongsTo(models.Area,{as: 'areas', foreignKey: 'areaId'})
+
+    // }
     static config(sequelize){
         return {sequelize, tableName: USER_TABLE, modelName: 'User', timestamps:false}
     }
